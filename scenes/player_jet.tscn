@@ -1,13 +1,62 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsu6ivcfry3rw"]
+[gd_scene load_steps=9 format=3 uid="uid://dsu6ivcfry3rw"]
 
 [ext_resource type="Script" path="res://scripts/player_jet.gd" id="1_513h0"]
+[ext_resource type="Texture2D" uid="uid://brgr6bewbi6m5" path="res://assets/racejet-Sheet.png" id="1_c0hbl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smoyf"]
+atlas = ExtResource("1_c0hbl")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uketp"]
+atlas = ExtResource("1_c0hbl")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5mut"]
+atlas = ExtResource("1_c0hbl")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0of1y"]
+atlas = ExtResource("1_c0hbl")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1285p"]
+atlas = ExtResource("1_c0hbl")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vcgua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smoyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uketp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5mut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0of1y")
+}],
+"loop": true,
+"name": &"driving",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1285p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="PlayerJet" type="CharacterBody2D"]
 script = ExtResource("1_513h0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vcgua")
+animation = &"idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, -16, 16, 0, -16, 16, -13, 0)
