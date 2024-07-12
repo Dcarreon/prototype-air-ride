@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsu6ivcfry3rw"]
+[gd_scene load_steps=5 format=3 uid="uid://dsu6ivcfry3rw"]
 
+[ext_resource type="Script" path="res://scripts/player_jet.gd" id="1_513h0"]
 [ext_resource type="Texture2D" uid="uid://c0wi3c7i87d4x" path="res://assets/racejet-Sheet.png" id="1_c0hbl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yaa7b"]
@@ -23,11 +24,12 @@ animations = [{
 }]
 
 [node name="PlayerJet" type="CharacterBody2D"]
+script = ExtResource("1_513h0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ywvv4")
 animation = &"idle"
-frame_progress = 0.646763
+frame_progress = 0.152708
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-16, 16, 0, -16, 0, -16, 16, 16, 0, 13)
