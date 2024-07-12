@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfsmh7aca37kk"]
+
+[ext_resource type="PackedScene" uid="uid://dsu6ivcfry3rw" path="res://scenes/player_jet.tscn" id="1_kypuy"]
+
+[node name="game" type="Node2D"]
+
+[node name="PlayerJet" parent="." instance=ExtResource("1_kypuy")]
+
+[node name="Camera2D" type="Camera2D" parent="PlayerJet"]
+position_smoothing_enabled = true
