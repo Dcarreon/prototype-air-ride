@@ -14,6 +14,8 @@ func _process(delta: float) -> void:
 	elif velocity == Vector2.ZERO:
 		sprite.play("idle")
 
+	move_and_collide(velocity * delta)
+
 func _physics_process(delta: float) -> void:
 	# ROTATION
 	if (velocity != Vector2.ZERO):
@@ -28,8 +30,6 @@ func _physics_process(delta: float) -> void:
 	elif (velocity != Vector2.ZERO):
 		velocity = lerp(velocity, Vector2.ZERO, 0.02)
 		velocity = _round_vec2_to_whole(velocity)
-
-	move_and_slide()
 
 func _round_vec2_to_whole(vector: Vector2) -> Vector2:
 	if vector.x < 0:
