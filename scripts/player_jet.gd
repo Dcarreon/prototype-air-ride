@@ -8,6 +8,12 @@ extends CharacterBody2D
 @export var deceleration : float = 0.02 # percentage of max speed
 @export var rotation_speed : float = 0.05 # in radians
 
+func _process(delta: float) -> void:
+	if velocity != Vector2.ZERO:
+		sprite.play("driving")
+	elif velocity == Vector2.ZERO:
+		sprite.play("idle")
+
 func _physics_process(delta: float) -> void:
 	# ROTATION
 	if (velocity != Vector2.ZERO):
